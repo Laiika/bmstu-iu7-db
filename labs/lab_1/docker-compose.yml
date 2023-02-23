@@ -1,0 +1,17 @@
+version: ‘3.7’
+
+services:   # задаем контейнеры
+    postgres:     
+        container_name: "db-labs"
+        image: postgres 
+        environment:       
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=zhenya_z
+            - POSTGRES_DB=kpop_db
+        volumes:       
+            - ./data:/var/lib/postgresql/data
+        ports:       
+            - ${POSTGRES_PORT:-5432}:5432
+
+volumes:
+    data:

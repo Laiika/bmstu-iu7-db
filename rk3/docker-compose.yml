@@ -1,0 +1,12 @@
+version: ‘3.7’
+
+services:   # задаем контейнеры
+    postgres:     
+        container_name: "rk"
+        image: postgres 
+        environment:       
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_USER=zhenya_z
+            - POSTGRES_DB=postgres
+        ports:       
+            - 5555:5432
